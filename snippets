@@ -110,7 +110,7 @@ function generateLinksFromSource(list, uuid, workerDomain) {
                 type: 'ws',
                 host: workerDomain,
                 path: wsPath,
-                alpn: h3
+                alpn: 'h3'
             });
             links.push(`${proto}://${uuid}@${safeIP}:${port}?${wsParams.toString()}#${encodeURIComponent(wsNodeName)}`);
         });
@@ -267,7 +267,7 @@ function generateLinksFromNewIPs(list, uuid, workerDomain) {
             type: 'ws',
             host: workerDomain,
             path: wsPath,
-            alpn: h3
+            alpn: 'h3'
         };
 
         const wsParams = new URLSearchParams(params);
